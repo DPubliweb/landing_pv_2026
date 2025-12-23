@@ -1,11 +1,9 @@
-import React from "react";
-import Layout from "./Layout";
-import Home from "./pages/Home";
+import React from 'react';
+import Home from './pages/Home';
+import './index.css';
 
-export default function App() {
-  return (
-    <Layout>
-      <Home />
-    </Layout>
-  );
+function App() {
+  return <Home />;
 }
+
+export default App;
