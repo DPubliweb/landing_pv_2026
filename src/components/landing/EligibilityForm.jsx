@@ -16,7 +16,7 @@ const logLead = (leadData) => {
 // ---- ENVOI AU SERVEUR (TON APP) ----
 const sendToServer = async (leadData) => {
   // 🔁 À MODIFIER : ton URL + ta route
-  const ENDPOINT = "https://oepnjcmswu.eu08.qoddiapp.com/leads_pv";
+  const ENDPOINT = "https://cjqmzgnxwo.eu08.qoddiapp.com/leads_pv";
 
   try {
     const response = await fetch(ENDPOINT, {
