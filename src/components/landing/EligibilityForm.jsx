@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, CardContent, CardHeader } from "components/ui/card";
+import { Card, CardContent, CardHeader } from "../ui/card";
 import { CheckCircle2, Loader2 } from "lucide-react";
 
 // ---- LOG LOCAL + QODDI ----
