@@ -1,116 +1,93 @@
-import React, { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import React from "react";
+import { Calendar } from "lucide-react";
 
-export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const faqs = [
-    {
-      question: "Comment fonctionnent les panneaux solaires ?",
-      answer: "Les panneaux photovoltaïques captent la lumière du soleil et la transforment en électricité grâce à des cellules photovoltaïques. Cette électricité alimente directement votre maison (autoconsommation), le surplus peut être revendu à EDF OA ou stocké dans une batterie."
-    },
-    {
-      question: "Quelles sont les nouvelles aides 2026 ?",
-      answer: "En 2026, vous pouvez bénéficier de MaPrimeRénov' (jusqu'à 20 000€), du CITE - Crédit d'Impôt pour la Transition Énergétique (30% de déduction), de l'Éco-PTZ (jusqu'à 30 000€), et des primes CEE. Ces nouvelles aides régionales et nationales visent à encourager la transition écologique."
-    },
-    {
-      question: "Quels sont les critères d'éligibilité ?",
-      answer: "Vous devez être propriétaire d'une maison individuelle. Le logement doit être construit depuis plus de 2 ans. L'installation doit être réalisée par un artisan certifié RGE (Reconnu Garant de l'Environnement). Les aides varient selon vos revenus."
-    },
-    {
-      question: "Quelle économie puis-je réaliser ?",
-      answer: "Vous pouvez réaliser jusqu'à 80% d'économie sur votre facture d'électricité. L'installation est généralement rentabilisée en 7 à 10 ans. Sur la durée de vie des panneaux (25-30 ans), vous réalisez des économies considérables, d'autant plus avec la hausse du prix de l'électricité."
-    },
-    {
-      question: "Quelle est la durée de vie des panneaux solaires ?",
-      answer: "Les panneaux solaires ont une durée de vie de 25 à 30 ans en moyenne. Ils conservent environ 80% de leur capacité de production après 25 ans. L'entretien est minimal (nettoyage occasionnel) et la plupart des fabricants offrent une garantie de 20 à 25 ans."
-    },
-    {
-      question: "Puis-je revendre mon surplus d'électricité ?",
-      answer: "Oui ! Vous pouvez revendre votre surplus d'électricité à EDF OA (Obligation d'Achat) à un tarif réglementé. Vous pouvez également choisir de stocker ce surplus dans une batterie pour l'utiliser la nuit ou les jours moins ensoleillés."
-    }
-  ];
-
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+export default function FinalCTA() {
+  const scrollToForm = () => {
+    document.getElementById('eligibility-form').scrollIntoView();
   };
 
   return (
-    <section className="py-20 px-6 bg-white">
-      <div className="max-w-[900px] mx-auto">
-        {/* Section Title */}
-        <h2 className="text-center text-[36px] md:text-[42px] font-bold mb-4" style={{ color: '#0D47A1' }}>
-          Questions fréquentes
+    <section className="py-24 px-6" style={{ backgroundColor: '#0D47A1' }}>
+      <div className="max-w-[1000px] mx-auto text-center">
+        {/* Main Message */}
+        <h2 className="text-white text-[28px] md:text-[38px] font-bold leading-snug mb-12">
+          Devenez <span style={{ color: '#42A5F5' }}>autonome en énergie</span> 
+          {' '}et réalisez jusqu'à{' '}
+          <span style={{ color: '#42A5F5' }}>80% d'économies</span>
+          {' '}sur votre facture d'électricité
         </h2>
-        <p className="text-center text-lg text-gray-600 mb-12">
-          Tout ce que vous devez savoir sur les panneaux solaires et les aides 2026
-        </p>
 
-        {/* FAQ Items */}
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="border-2 rounded-xl overflow-hidden transition-all duration-300"
-              style={{ 
-                borderColor: openIndex === index ? '#1976D2' : '#E0E0E0',
-                backgroundColor: openIndex === index ? '#E3F2FD' : 'white'
-              }}
-            >
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left transition-colors duration-300"
-              >
-                <span 
-                  className="text-lg font-bold pr-4"
-                  style={{ color: openIndex === index ? '#1976D2' : '#0D47A1' }}
-                >
-                  {faq.question}
-                </span>
-                <ChevronDown
-                  className={`w-6 h-6 flex-shrink-0 transition-transform duration-300 ${
-                    openIndex === index ? 'rotate-180' : ''
-                  }`}
-                  style={{ color: openIndex === index ? '#1976D2' : '#0D47A1' }}
-                />
-              </button>
-              
-              <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? 'max-h-96' : 'max-h-0'
-                }`}
-              >
-                <div className="px-6 pb-5 pt-2">
-                  <p className="text-base leading-relaxed text-gray-700">
-                    {faq.answer}
-                  </p>
-                </div>
-              </div>
+        {/* Benefits Icons */}
+        <div className="grid sm:grid-cols-3 gap-8 mb-12">
+          <div className="text-white">
+            <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: '#4CAF50' }}>
+              <span className="text-3xl">☀️</span>
             </div>
-          ))}
+            <p className="text-lg font-semibold">Autoconsommation</p>
+            <p className="text-sm opacity-90 mt-2">Produisez votre propre électricité</p>
+          </div>
+
+          <div className="text-white">
+            <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: '#4CAF50' }}>
+              <span className="text-3xl">💰</span>
+            </div>
+            <p className="text-lg font-semibold">80% d'économies</p>
+            <p className="text-sm opacity-90 mt-2">Réduisez drastiquement vos factures</p>
+          </div>
+
+          <div className="text-white">
+            <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: '#4CAF50' }}>
+              <span className="text-3xl">🌱</span>
+            </div>
+            <p className="text-lg font-semibold">100% écologique</p>
+            <p className="text-sm opacity-90 mt-2">Énergie propre et renouvelable</p>
+          </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center p-8 rounded-2xl" style={{ backgroundColor: '#E8F4F8' }}>
-          <h3 className="text-2xl font-bold mb-3" style={{ color: '#0D47A1' }}>
-            Vous avez d'autres questions ?
-          </h3>
-          <p className="text-lg text-gray-700 mb-6">
-            Notre équipe d'experts est là pour vous répondre
+        {/* CTA Button */}
+        <button
+          onClick={scrollToForm}
+          className="px-16 py-6 text-white text-2xl font-extrabold transition-all duration-300 transform hover:scale-110 shadow-2xl mb-6"
+          style={{
+            backgroundColor: '#4CAF50',
+            borderRadius: '12px',
+            fontFamily: 'Rubik, sans-serif'
+          }}
+          onMouseEnter={(e) => e.target.style.backgroundColor = '#388E3C'}
+          onMouseLeave={(e) => e.target.style.backgroundColor = '#4CAF50'}
+        >
+          J'en profite
+        </button>
+
+        {/* Deadline Notice */}
+        <div className="flex items-center justify-center gap-3 text-white">
+          <Calendar className="w-5 h-5" />
+          <p className="text-lg font-semibold">
+            Profitez des nouvelles aides <span style={{ color: '#42A5F5' }}>2026</span>
           </p>
-          <button
-            onClick={() => document.getElementById('eligibility-form').scrollIntoView()}
-            className="px-10 py-4 text-white text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
-            style={{
-              backgroundColor: '#4CAF50',
-              borderRadius: '10px',
-              fontFamily: 'Rubik, sans-serif'
-            }}
-            onMouseEnter={(e) => e.target.style.backgroundColor = '#388E3C'}
-            onMouseLeave={(e) => e.target.style.backgroundColor = '#4CAF50'}
-          >
-            Nous contacter
-          </button>
+        </div>
+
+        {/* Trust Badges */}
+        <div className="mt-12 pt-8 border-t border-white/20">
+          <p className="text-white/80 text-sm mb-4">Nos garanties :</p>
+          <div className="flex flex-wrap justify-center gap-6 text-white text-sm font-semibold">
+            <div className="flex items-center gap-2">
+              <span className="text-xl" style={{ color: '#4CAF50' }}>✓</span>
+              <span>Devis gratuit sous 24h</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-xl" style={{ color: '#4CAF50' }}>✓</span>
+              <span>Artisans certifiés RGE</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-xl" style={{ color: '#4CAF50' }}>✓</span>
+              <span>Garantie décennale</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-xl" style={{ color: '#4CAF50' }}>✓</span>
+              <span>SAV dédié</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
