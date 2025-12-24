@@ -13,16 +13,6 @@ export default function Home() {
   const scrollToForm = () => {
     document.getElementById('eligibility-form')?.scrollIntoView({ behavior: 'smooth' });
   };
-  console.log("TYPES", {
-  HeroSection: typeof HeroSection,
-  ComfortSection: typeof ComfortSection,
-  BenefitsGrid: typeof BenefitsGrid,
-  AdvantagesSection: typeof AdvantagesSection,
-  FinalCTA: typeof FinalCTA,
-  FAQ: typeof FAQ,
-  CTAButton: typeof CTAButton,
-});
-
 
   
   useEffect(() => {
