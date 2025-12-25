@@ -56,9 +56,10 @@ export default function HeroSection() {
           </h1>
           <div className="flex-shrink-0">
             <img
-              src="https://aideregionales.com/1s6ajoj-panneaux-solaire_10bm0bm0bm08o00001g01o.jpg"
-              alt="Panneaux solaires"
-              className="h-[70px] md:h-[180px] w-auto object-contain rounded-lg shadow-lg" />
+              src="/1s6ajoj-panneaux-solaire_10bm0bm0bm08o00001g01o.jpg"
+            alt="Panneaux solaires"
+            className="h-[70px] md:h-[180px] w-auto object-contain rounded-lg shadow-lg"
+            loading="lazy" />
 
           </div>
         </div>

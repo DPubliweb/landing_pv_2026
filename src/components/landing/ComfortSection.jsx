@@ -17,9 +17,9 @@ export default function ComfortSection() {
           {/* Left: Image */}
           <div className="order-2 md:order-1">
             <img
-              src="https://aideregionales.com/1s6ajoj-panneaux-solaire_10bm0bm0bm08o00001g01o.jpg"
+              src="/1t7ryvb-design-sans-titre-12_10kv0bq0b209y04u00x028.png"
               alt="Installation panneaux solaires sur toit"
-              className="w-full rounded-2xl shadow-lg"
+              className="w-full rounded-2xl"
             />
           </div>
 
